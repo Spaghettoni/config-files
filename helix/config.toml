@@ -1,0 +1,23 @@
+theme = "rose_pine_moon"
+
+[keys.normal]
+S-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+S-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-s = ":w"
+C-S-d = "page_cursor_half_up"
+"ret" = ["open_below", "normal_mode"]
+
+[keys.insert]
+"A-x" = "normal_mode"
+
+[editor]
+bufferline = "always"
+scrolloff = 15
+line-number = "relative"
+color-modes = true
+continue-comments = false
+popup-border = "all"
+
+
+[editor.statusline]
+center = ["version-control"]

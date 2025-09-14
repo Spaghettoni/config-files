@@ -1,0 +1,106 @@
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+config.deno.enable = true
+
+[language-server]
+biome = { command = "biome", args = ["lsp-proxy"] }
+
+#---------------------------------------------------------------------------------------------------------
+
+[[language]]
+name = "javascript"
+language-servers = [
+  { name = 'biome' },
+  { name = 'typescript-language-server', except-features = ['format'] }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.js"] }
+
+#---------------------------------------------------------------------------------------------------------
+
+[[language]]
+name = "typescript"
+language-servers = [
+  { name = 'biome' },
+  { name = 'typescript-language-server', except-features = ['format'] }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.ts"] }
+
+#---------------------------------------------------------------------------------------------------------
+
+[[language]]
+name = "jsx"
+language-servers = [
+  { name = 'biome' },
+  { name = 'typescript-language-server', except-features = ['format'] }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.jsx"] }
+
+#---------------------------------------------------------------------------------------------------------
+
+[[language]]
+name = "tsx"
+language-servers = [
+  { name = 'biome' },
+  { name = 'typescript-language-server', except-features = ['format'] }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.tsx"] }
+
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--parser", "json"] }
+
+[[language]]
+name = "yaml"
+formatter = { command = "prettier", args = ["--parser", "yaml"] }
+
+[[language]]
+name = "css"
+language-servers = [
+  { name = 'biome' }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.css"] }
+
+[[language]]
+name = "scss"
+language-servers = [
+  { name = 'biome' }
+]
+auto-format = true
+formatter = { command = "biome", args = ["format", "--stdin-file-path", "a.scss"] }
+
+[[language]]
+name = "markdown"
+formatter = { command = "prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "html"
+formatter = { command = "prettier", args = ["--parser", "html"] }
+
+[[language]]
+name = "php"
+auto-format = true
+formatter = { command = "pretty-php" }
+
+[[language]]
+name = "svelte"
+auto-format = true
+formatter = { command = "prettier", args = ["--plugin", "prettier-plugin-svelte", "--stdin-filepath", "a.svelte"] }
+
+[[language]]
+name = "dart"
+auto-format = true
+formatter = { command = "dart", args = ["format", "--stdin-name", "a.dart"] }
+
+[[language]]
+name = "vue"
+auto-format = true
+scope = "source.vue"
+file-types = ["vue"]
+formatter = {command = 'prettier', args= ["--parser", "vue"]}
+roots = ["package.json", "vue.config.js", ".prettierrc.json"]

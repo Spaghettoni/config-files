@@ -1,0 +1,17 @@
+"ui.background" = "light-gray"
+"ui.text" = "black"
+"ui.selection" = "cyan"
+"ui.linenr" = "black"
+"ui.cursor" = { fg = "white", bg = "black" }
+"ui.linenr.selected" = { fg = "white", bg = "black" }
+"ui.menu.selected" = "magenta"
+"comment" = "light-gray"
+"keyword.control.import" = "light-magenta"
+"keyword.control.conditional" = "blue"
+"type" = "light-yellow"
+"attribute" = "yellow"
+"function.builtin.static" = "green"
+"function.method" = "blue"
+"function.macro" = "blue"
+"tag" = "light-red"
+"variable.parameter" = "yellow"
